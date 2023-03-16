@@ -1,0 +1,148 @@
+git branch -a – Muestre una lista de ramas locarales y ramas remotas en su repositorio de Git.
+
+git branch -c – Copie una rama de Git.
+
+git branch -d <branch-name> –  Eliminar una rama local de Git . Este comando no funcionará si la rama que está intentando eliminar tiene cambios no combinados.
+
+git branch -D <branch-name> – Eliminar una rama local de Git con cambios no combinados.
+
+git branch -m <branch-name> <new-branch-name> – Cambiar el nombre de una rama de Git .
+
+git branch -r – Muestre una lista de las ramas remotas en su repositorio de Git.
+
+git push <remote> --delete <remote-branch-name> –  Eliminar una rama remota de Git .
+
+git push --set-upstream <remote> <branch> –  Establecer una rama aguas arriba . Ejecutar este comando enviará su sucursal local a la nueva sucursal remota
+
+
+
+
+git diff --stat   -->Compara lo que hay en el area de preparaciòn con lo que hay en la rama local.
+
+git commit -am "comentario" -->Agrega el commi
+  
+git restore ---staged  <...archivo>     -->Para quitar el archivo del area de preparación.
+
+
+git commit --amend   "Mensaje" -->Agrega lo que tengo en el area de preparación al commit hecho anteriormente.
+
+git reset #####   --> Donde ##### es el numero de referencia del commit. Elimina los cambios en el area de preparación.
+
+git revert #####  --> Revierte los cambios en el area de preparación.
+
+git reset soft HARD
+
+
+git pull --> Hace una fusión entre git fetch y git merge
+
+git merge   --> Fusiona la rama local con la rama remota.
+
+cherry pick  
+
+tags 
+
+git ignore:  
+
+git merge -ff   -->Git Merge Fast Forward
+
+git branch --no--merged  : Para saber cuales son las ramas que no estan integradas a master ()
+
+
+git branch --merge : Para saber cuales son las ramas integradas a master
+
+
+git checkout <branch-name> 					–  Cambiar a una rama de Git diferente .
+git checkout -b <branch-name>					–  Crear una nueva rama  y cambiar a ella.
+git checkout -b <branch-name><remote-name>/<branch-name> 	– Cree una sucursal local desde la sucursal remota de Git y desproteja esa sucursal.
+git checkout <commit hash> 					–  Verifique una confirmación de Git anterior .
+git checkout <tag name> 					– Obtener una etiqueta Git en un estado HEAD separado.
+git checkout -b <branch-name><tag-name>			–  Desproteger una etiqueta de Git  como una rama.
+
+git cherry-pick [insert commit reference] 				–  Aplicar los cambios de una confirmación  en una rama diferente.
+
+
+Comandos de clonación de Git
+git clone <repository-url> 			– Clonar un repositorio remoto especificado. Consulte las prácticas recomendadas de Git-SCM para el formato de URL remota .
+git clone <repository-url> <directory-name>	– Clonar un repositorio y nombrar el directorio local.
+git clone <repository-url> --origin <name> 	– Clonar un repositorio y nombrar el remoto ( <name>). Si no desea nombrar el control remoto, Git le proporcionará el nombre predeterminado origin.
+git clone <repository-url> 			--branch <branch-name> – Clona un repositorio y revisa la rama específica. 
+git clone <repository-url> --depth <depth> 	– Clonar un repositorio con un número específico de confirmaciones ( <depth>). 
+git clone <repository-url> --no-tags 		– Clonar un repositorio sin copiar las etiquetas del repositorio.
+
+
+Comandos de confirmación de Git
+git status – Muestre una lista de archivos en su directorio provisional con el estado del archivo adjunto.
+git add – Cambios en el archivo de escenario. Ejecutar este comando con un nombre de archivo asociado organizará los cambios del archivo en su directorio de preparación.
+git commit – Guarde los cambios en su repositorio de Git. Ejecutar este comando con un nombre de archivo asociado guardará los cambios del archivo en su repositorio.
+git commit -a – Agregue todos los archivos modificados y eliminados en su directorio de trabajo a la confirmación actual.
+git commit --amend – Modificar una confirmación de Git . Edite un mensaje de confirmación de Git agregando un mensaje entre comillas después del comando.
+git commit -m – Agregue un mensaje de confirmación de Git. Agregue su mensaje entre comillas después del comando
+
+
+Comandos de configuración de Git
+git config --global– Personalice las configuraciones almacenadas en su directorio de inicio y puede sobrescribir la configuración del sistema de configuración de Git.
+git config --email– Establece el correo electrónico asociado con sus confirmaciones de Git y otras acciones de Git.
+git config --system– Personalice los ajustes de configuración para su sistema operativo.
+git --config user.name– Establece el nombre de usuario asociado con sus confirmaciones de Git y otras acciones de Git.
+git config --list– Ver todos los ajustes de configuración de Git, incluidos los niveles local, global y del sistema.
+git config --local– Personalice la configuración que es específica del repositorio de Git y sobrescriba las configuraciones de Git a nivel global y del sistema.
+
+
+Comandos de combinación Git
+git merge – Combinar dos o más historias de desarrollo juntas. Usado en combinación con fetch, esto combinará el historial obtenido de una sucursal remota en la sucursal local actualmente verificada.
+git merge <branch-name> –  Combine los cambios de una rama  en la rama que actualmente ha retirado.
+git merge --abort – Anula el proceso de fusión y restaura el estado del proyecto antes de que se intentara la fusión. Esto funciona como un mecanismo de seguridad cuando se produce un conflicto.
+git merge --continue – Intente completar una combinación que se detuvo debido a conflictos de archivos después de resolver el conflicto de combinación .
+git merge --squash – Combine todos los cambios de la rama que se está fusionando en una única confirmación en lugar de conservarlos como confirmaciones individuales.
+git merge --no-commit – Combine la rama en la rama actual, pero no realice una nueva confirmación.
+git merge --no-ff – Crea una confirmación de fusión en lugar de intentar un avance rápido.
+
+
+Comandos de extracción de Git
+git pull– Esto realizará un git fetchseguido de un git merge FETCH_HEAD, y le permitirá recuperar e integrar con otro repositorio o una sucursal local.
+git pull --quiet– Suprima el texto de salida después de git fetchy git merge.
+git pull --verbose– Expanda el texto de salida después de git fetchy git merge.
+Comandos Git Pull relacionados con Merge
+git pull --squash– Combine todos los cambios de la rama que se está fusionando en una sola confirmación, en lugar de conservar las confirmaciones individuales.
+git pull --no-commit– Combine la rama actualmente desprotegida con la rama ascendente remota.
+git pull --no-ff– Cree una confirmación de combinación en todos los casos, incluso cuando la combinación podría resolverse como un avance rápido.
+
+
+Comandos Git Pull relacionados con Fetch
+git pull --all  – Obtener todos los controles remotos. 
+git pull --depth=<depth>– Obtener un número limitado de confirmaciones. 
+git pull --dry-run– Muestre la acción que se completaría sin realizar cambios en su repositorio.
+git pull --prune– Eliminar todas las referencias remotas que ya no existen en el remoto.
+git pull --no-tags– No buscar etiquetas.
+
+
+Comandos de inserción de Git
+git push  – Empuje la rama desprotegida actual al control remoto predeterminado origin. 
+git push <remote><branch>– Empuje la rama especificada junto con todas sus confirmaciones necesarias a su repositorio remoto de destino. 
+git push <remote> --force– Forzar un impulso de Git en una combinación que no sea de avance rápido. Esta opción fuerza la actualización de una referencia remota incluso cuando no es el ancestro de la referencia local. Esto puede hacer que el repositorio remoto pierda confirmaciones, así que utilícelo con cuidado.
+git push <remote> --all– Empuje todas las sucursales locales a un remoto especificado.
+git push <remote> --tags– Empuje todas las etiquetas locales a un control remoto específico. Las etiquetas no se envían automáticamente al usar --all.
+
+
+Comandos de Git Rebase
+git rebase <target branch name> – Vuelva a establecer la base de su rama actualmente desprotegida en una rama de destino. Esto reescribe una confirmación de la rama de origen y la aplica en la parte superior de la rama de destino.
+git rebase --continue – Continúe con una reorganización de Git después de haber resuelto un conflicto entre archivos.
+git rebase --skip – Omita una acción que genere un conflicto para continuar con una reorganización de Git.
+git rebase --abort – Cancelar una reorganización de Git. Su sucursal volverá al estado en el que estaba antes de que comenzara la reorganización.
+git rebase <target branch name> -i – Inicie  una reorganización interactiva  desde su sucursal actualmente registrada en una sucursal de destino.
+
+
+Comandos de Git Stash
+git stash – Cree un alijo con modificaciones locales y vuelva a la confirmación principal.
+git stash list – Mostrar una lista de todos los alijos en su repositorio.
+git stash show – Ver el contenido de su alijo más reciente. Esto mostrará sus cambios ocultos como una diferencia entre el contenido oculto y la confirmación de cuando se creó el alijo.
+git stash drop <stash> – Elimina un alijo de la lista de alijos en tu repositorio.
+git stash pop <stash> – Aplique un alijo en la parte superior del árbol de trabajo actual y elimínelo de su lista de alijos.
+git stash apply <stash> – Aplicar un alijo en la parte superior del árbol de trabajo actual. El alijo no se eliminará de tu lista de alijos.
+git stash clear – Elimina todos los alijos de tu repositorio.
+
+ git log --graph --pretty=format:'%h %an %s' --abbrev-commit
+
+
+code. --> Para abrir visual estudio code desde la consola (Siempre y cuando estè instalado)   
+
